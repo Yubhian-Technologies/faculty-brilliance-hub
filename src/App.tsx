@@ -11,6 +11,9 @@ import Dashboard from "./pages/Dashboard";
 import FPMSForm from "./pages/FPMSForm";
 import Review from "./pages/Review";
 import Reports from "./pages/Reports";
+import Faculty from "./pages/Faculty";
+import Departments from "./pages/Departments";
+import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 import { Loader2 } from "lucide-react";
 
@@ -75,8 +78,32 @@ function AppRoutes() {
       <Route
         path="/reports"
         element={
-          <ProtectedRoute allowedRoles={['faculty', 'hod', 'committee', 'admin']}>
+          <ProtectedRoute allowedRoles={['hod', 'committee', 'admin']}>
             <Reports />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/faculty"
+        element={
+          <ProtectedRoute allowedRoles={['hod', 'committee', 'admin']}>
+            <Faculty />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/departments"
+        element={
+          <ProtectedRoute allowedRoles={['committee', 'admin']}>
+            <Departments />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/settings"
+        element={
+          <ProtectedRoute allowedRoles={['admin']}>
+            <Settings />
           </ProtectedRoute>
         }
       />
