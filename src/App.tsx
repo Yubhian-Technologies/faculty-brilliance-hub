@@ -16,6 +16,15 @@ import Departments from "./pages/Departments";
 import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 import { Loader2 } from "lucide-react";
+import TeachingLearning from "./pages/fpms/TeachingLearning";
+import ResearchDevelopment from "./pages/fpms/ResearchDevelopment";
+import ProfessionalDevelopment from "./pages/fpms/ProfessionalDevelopment";
+import StudentDevelopment from "./pages/fpms/StudentDevelopment";
+import InstitutionalDevelopment from "./pages/fpms/InstitutionalDevelopment";
+import Submissions from "./pages/Submissions";
+import Appeals from "./pages/Appeals";
+import College from "./pages/College";
+import AddAdmin from "./pages/AddAdmin";
 
 const queryClient = new QueryClient();
 
@@ -99,15 +108,18 @@ function AppRoutes() {
           </ProtectedRoute>
         }
       />
-      <Route
-        path="/settings"
-        element={
-          <ProtectedRoute allowedRoles={['admin']}>
-            <Settings />
-          </ProtectedRoute>
-        }
-      />
+     
+      <Route path="/fpms/teaching" element={<TeachingLearning />} />
+          <Route path="/fpms/research" element={<ResearchDevelopment></ResearchDevelopment>} />
+          <Route path="/fpms/professional" element={<ProfessionalDevelopment />} />
+          <Route path="/fpms/student" element={<StudentDevelopment />} />
+          <Route path="/fpms/institutional" element={<InstitutionalDevelopment />} />
       <Route path="*" element={<NotFound />} />
+      <Route path="/submissions" element={<Submissions></Submissions>}></Route>
+      <Route path='/appeals' element={<Appeals></Appeals>}></Route>
+      <Route path="/college" element={<College></College>}></Route>
+      <Route path="/add" element={<AddAdmin></AddAdmin>}></Route>
+      <Route path="/settings" element={<Settings></Settings>}></Route>
     </Routes>
   );
 }

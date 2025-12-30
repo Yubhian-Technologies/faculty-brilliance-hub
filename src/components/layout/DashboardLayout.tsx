@@ -3,9 +3,19 @@ import { AppSidebar } from './AppSidebar';
 
 interface DashboardLayoutProps {
   children: ReactNode;
+  title: string;
+  subtitle?: string;
+  role?: "faculty" | "hod" ;
+  currentPath?: string;
 }
 
-export function DashboardLayout({ children }: DashboardLayoutProps) {
+export function DashboardLayout({ 
+  children, 
+  title, 
+  subtitle, 
+  role = "faculty",
+  currentPath = "/dashboard" 
+}: DashboardLayoutProps) {
   return (
     <div className="min-h-screen bg-background">
       <AppSidebar />
