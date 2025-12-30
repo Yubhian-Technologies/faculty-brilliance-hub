@@ -52,7 +52,7 @@ const DESIGNATIONS = [
   'Assistant Professor',
   'Associate Professor',
   'Professor',
-  'Professor & HOD',
+  // 'Professor & HOD',
   'Lecturer',
 ];
 
